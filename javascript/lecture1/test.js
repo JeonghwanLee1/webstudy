@@ -16,3 +16,18 @@ var4.getAttribute("href");
 console.log(var4.getAttribute("href"));
 var4.setAttribute("href","http://google.com");
 console.log(var4.getAttribute("href"));
+
+var var5 = document.getElementsByTagName("input");
+
+console.log(var5);
+console.log(var5[0].value);
+
+function mysubmit(){
+    var idVal = document.getElementsByTagName("input")[0].value;
+    var pwVal = document.getElementsByTagName("input")[1].value;
+    console.log(idVal);
+    console.log(pwVal);
+    alert("id : "+idVal+" passwd : "+pwVal);
+}
+
+//setTimeout(mysubmit,3000); 3000밀리세컨드 뒤에 mysubmit을 실행
