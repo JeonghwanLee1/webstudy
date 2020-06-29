@@ -35,5 +35,6 @@ namearr.forEach( name =>console.log(`my name is ${name}`));
 const numarr2 = [1,2,3,4,5];
 const numarr3 = numarr2.map(num=>num*2);//새로운 값 리턴 매우 마니 사용
 numarr2.map(num=>console.log(num));
+
 console.log(numarr2);
 console.log(numarr3);
