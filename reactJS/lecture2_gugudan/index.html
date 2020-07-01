@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <meta charset ="utf-8"/>
+        <script crossorigin src = "http://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src = "http://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src = "http://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <!--<script>
+            import React from 'react';
+            import ReactDOM from 'react-dom';
+        </script>-->
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type = "text/babel">
+            class GuGuDan extends React.Component{
+              constructor(props){
+                super(props);
+                this.state = {
+                  first : Math.ceil(Math.random()*9),
+                  second : Math.ceil(Math.random()*9),
+                  value : '',
+                  result: '',
+                };
+              }
+              /*
+              생성자 없이 해도 된다
+              state = {
+              first : ...
+              ...};
+            }
+              */
+
+              //내부 함수는 무조건 화살표함수(this가 달라짐)
+              onChange = e=>this.setState({value:e.target.value})
+              onSubmit = e=>{
+                e.preventDefault();
+                let userAnswer = this.state.first*this.state.second;
+                if(parseInt(this.state.value)==userAnswer)
+                {
+                  /*
+                  this.setState({
+                    first : Math.ceil(Math.random()*9),
+                    second : Math.ceil(Math.random()*9),
+                    result: this.state.value + '정답입니다.',
+                    value:''
+                  })
+                  */
+                  this.setState(prevState=>{
+                    return {
+                    first : Math.ceil(Math.random()*9),
+                    second : Math.ceil(Math.random()*9),
+                    result: prevState.value + '정답입니다.',
+                    value:''
+                  }})//자동 리턴
+
+                }
+                else {
+                  this.setState({result : this.state.value +'오답입니다.'})
+                }
+                this.input.focus();
+
+              }
+              input;//DOM에 직접 접근하고 싶을 때 ref 이용
+              onRefInput = c=>{this.input=c;};
+
+              //setState할때마다 render 실행 그래서 함수를 미리 만들어놓고 렌더에서 실행하는것
+              render(){//태그사이에 중괄호 => JS
+                return (
+                  <React.Fragment>
+                        <div>{this.state.first}곱하기{this.state.second}는?</div>
+                        <form onSubmit={this.onSubmit}>
+                            <input ref={this.onRefInput} type = "number" value = {this.state.value} onChange = {this.onChange}/>
+                            <button type ="submit">입력!</button>
+                            { //onclick, onchange, onsubmit, onload
+                            }
+                        </form>
+                        {this.state.result}
+                  </React.Fragment>
+              )
+              }
+
+
+            }
+        </script>
+
+        <script type = "text/babel">
+            //ReactDOM.render(e(LikeButton), document.querySelector('#root'));
+            ReactDOM.render(<div><GuGuDan /></div>, document.querySelector('#root'));
+        </script>
+    </body>
+</html>

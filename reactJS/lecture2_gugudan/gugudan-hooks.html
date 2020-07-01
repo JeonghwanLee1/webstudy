@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset ="utf-8"/>
+        <script crossorigin src = "http://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src = "http://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src = "http://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <!--<script>
+            import React from 'react';
+            import ReactDOM from 'react-dom';
+        </script>-->
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type = "text/babel">
+            const GuGuDan = ()=> {
+              const [first, setFirst] = React.useState(Math.ceil(Math.random()*9));
+              const [second, setSecond] = React.useState(Math.ceil(Math.random()*9));
+              const [value, setValue] = React.useState('');
+              const [result, setResult] = React.useState('');
+              const inputRef = React.useRef(null);
+
+              const onChangeInput = (e)=>{
+                setValue(e.target.value);
+              };
+              const onSubmitInput = (e)=>{
+                e.preventDefault();
+                const userAnswer = parseInt(value);
+                const calculatedAnswer = first*second;
+                if(userAnswer==calculatedAnswer){
+                  setResult(userAnswer+' : 정답입니다!');
+                  setFirst(Math.ceil(Math.random()*9));
+                  setSecond(Math.ceil(Math.random()*9));
+                  setValue('')
+                  inputRef.current.focus();
+                }
+                else{
+                  setResult(userAnswer+' : 오답입니다!');
+                  setValue('')
+                  inputRef.current.focus();
+                }
+
+
+              }
+
+              return (
+              <React.Fragment>
+              <div>{first} 곱하기 {second} 는?</div>
+              <form onSubmit={onSubmitInput}>
+                  <input ref = {inputRef} onChange = {onChangeInput} value = {value}/>
+                  <button type = 'submit'>입력!</button>
+              </form>
+              {result}
+              </React.Fragment>
+            );
+            }
+        </script>
+
+        <script type = "text/babel">
+            //ReactDOM.render(e(LikeButton), document.querySelector('#root'));
+            ReactDOM.render(<div><GuGuDan /></div>, document.querySelector('#root'));
+        </script>
+    </body>
+</html>
