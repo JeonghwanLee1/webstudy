@@ -36,4 +36,6 @@ map은 리턴이 있다.
 
 sort 내부에 함수 넣을수 있음.(p-c)>0
 
+getElementBy ... 후 append보다는 appendchild 하자.
 
+get by class 에선 [0] 으로 해야함(여러개)
