@@ -39,3 +39,21 @@ sort 내부에 함수 넣을수 있음.(p-c)>0
 getElementBy ... 후 append보다는 appendchild 하자.
 
 get by class 에선 [0] 으로 해야함(여러개)
+
+반복문 안에 비동기 사용 시 closure 문제 발생
+
+var 공 = document.createElement('div')
+
+공.style.display='inline-block'
+
+공.style.border='1px solid black'
+
+공.style.borderRadius='10px'; //원래는 border-radius인데 빼기로 인식해서 대문자화
+
+javascript로 class 못슴.. className로 써야함
+
+document.getElementByClass = document.quarySelector(.클넴)
+
+document.getElementById = document.quarySelector(#아디)
+
+quarySelectorAll(여러개 가능)
