@@ -57,3 +57,6 @@ document.getElementByClass = document.quarySelector(.클넴)
 document.getElementById = document.quarySelector(#아디)
 
 quarySelectorAll(여러개 가능)
+
+width = 450
+background = url() 0 0; <== 요걸 이동시킴 150px 0  
