@@ -59,4 +59,16 @@ document.getElementById = document.quarySelector(#아디)
 quarySelectorAll(여러개 가능)
 
 width = 450
+
 background = url() 0 0; <== 요걸 이동시킴 150px 0  
+
+setInterval : 초마다 계속 실행 멈추는법? setInterval 함수를 리턴받아서 변수에 넣어서, clearInterval(변수); 하면됨 다시 시작하는건 코드에 복붙 ㅋ
+
+setTimeout : 한번 하고 끝
+
+Object.entries : 객체(딕셔너리)를 배열로 
+
+Object.entries(딕셔너리).find((v)=>{return v[1]=='가위'} //['가위','150px'] 리턴.. findIndex도 가능
+
+배열.includes(항목) // 코드 줄이기
+
