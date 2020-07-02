@@ -34,4 +34,6 @@ fill = enumerate
 
 map은 리턴이 있다.
 
-sort 내부에 함수 넣을수 있음.(p-c)
+sort 내부에 함수 넣을수 있음.(p-c)>0
+
+
