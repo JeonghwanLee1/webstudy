@@ -1,5 +1,15 @@
 
-document.querySelector("#exec").addEventListener("click",()=>{
+document.querySelector("#init").addEventListener("click",(e)=>{
+  parent = document.querySelector("#board");
+  parent.removeChild(document.querySelector("tbody"));
+  newBody = document.createElement("tbody");
+  parent.appendChild(newBody);
+  document.querySelector("#exec").disabled=false;
+  e.target.disabled=true;
+
+
+})
+document.querySelector("#exec").addEventListener("click",(e)=>{
   var row = parseInt(document.querySelector("#row").value);
   var col = parseInt(document.querySelector("#col").value);
   var number = parseInt(document.querySelector("#numOfMine").value);
@@ -17,16 +27,29 @@ document.querySelector("#exec").addEventListener("click",()=>{
       count++;
     }
   }
-
-
   tbody = document.querySelector("#board tbody")
   for(let i = 0; i < col ; i++){
     let tr = document.createElement("tr");
     for(let j = 0; j<row ; j++){
       let td = document.createElement("td");
-      td.textContent = gameboard[i][j];
       tr.appendChild(td);
+      td.addEventListener('click',(e)=>{ //Onclick으로 접근하니 안되더라..
+        //e.preventDefault();
+        if(gameboard[i][j]==1){
+          e.target.style="background : red;"
+
+        }
+        else if(gameboard[i][j]==0){
+          e.target.style="background : lightgrey;"
+        }
+      });
+      // td.onClick = ()=>{
+      //   console.log("gg")
+      //   alert("gg")
+      // };
     }
     tbody.appendChild(tr);
   }
-})
+  document.querySelector("#init").disabled=false;
+  e.target.disabled=true;
+});

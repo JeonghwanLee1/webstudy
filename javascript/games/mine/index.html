@@ -4,6 +4,10 @@
         <meta charset = "utf-8">
         <title>지뢰찾기</title>
         <style>
+        #board{
+          border-collapse: collapse;
+
+        }
         #board thead{
           font-size : 12px;
         }
@@ -14,7 +18,6 @@
           height : 30px;
           margin : 0;
         }
-
         </style>
   </head>
   <body>
@@ -23,6 +26,7 @@
       <input id="col" type="number" placeholder = "세로"/>
       <input id="numOfMine" type = "number" placeholder "지뢰수"/>
       <button id = "exec">실행</button>
+      <button id = "init" disabled="true">초기화</button>
       <table id = "board">
         <thead>
           <tr>
