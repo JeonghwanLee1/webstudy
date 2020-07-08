@@ -7,6 +7,7 @@
           #screen{
             width:500px;
             height:300px;
+            user-select: none; /*블록 안씌워지게*/
           }
           #screen.waiting{
             background-color: aqua;
@@ -17,11 +18,10 @@
           #screen.now{
             background-color: greenyellow;
           }
-
         </style>
   </head>
   <body>
-  <div id = "screen" class = "waiting"></div>
+  <div id = "screen" class = "waiting">Click to start next game</div>
   <script src ="reactiontime.js"></script>
   </body>
 </html>
