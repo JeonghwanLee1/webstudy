@@ -73,3 +73,5 @@ Object.entries(딕셔너리).find((v)=>{return v[1]=='가위'} //['가위','150p
 배열.includes(항목) // 코드 줄이기
 
 shift + esc = 크롬 작업관리자
+
+csss..
