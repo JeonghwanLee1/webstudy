@@ -79,3 +79,5 @@ csss..
 기본적으로 배열(객체)은 참조.. 배열을 deep copy 하려면 array.slice() // python의 [:]
 
 혹은 JSON.parse(JSON.stringiy(색깔들))
+
+팩토리 패턴(프로토타입 사용하자)
