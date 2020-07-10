@@ -75,3 +75,5 @@ Object.entries(딕셔너리).find((v)=>{return v[1]=='가위'} //['가위','150p
 shift + esc = 크롬 작업관리자
 
 csss..
+
+기본적으로 배열은 참조.. 배열을 deep copy 하려면 array.slice() // python의 [:]
