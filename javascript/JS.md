@@ -77,3 +77,5 @@ shift + esc = 크롬 작업관리자
 csss..
 
 기본적으로 배열(객체)은 참조.. 배열을 deep copy 하려면 array.slice() // python의 [:]
+
+혹은 JSON.parse(JSON.stringiy(색깔들))
