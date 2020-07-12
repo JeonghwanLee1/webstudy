@@ -22,7 +22,7 @@
         const onSubmitForm = (e)=>{
             e.preventDefault();
             if(parseInt(value)===first*second){
-                setResult('정답 : '+value);
+                setResult(((prevResult)=>{return '정답 : '+value}));
                 setFirst(Math.ceil(Math.random() * 9));
                 setSecond(Math.ceil(Math.random() * 9));
                 setValue('');
@@ -43,7 +43,7 @@
             <div id="result">{result}</div>
         </React.Fragment>;
     };
-
+//class => className, for => htmlFor
 </script>
 <script type="text/babel">
     ReactDOM.render(<GuGuDan/>,document.querySelector('#root'));
